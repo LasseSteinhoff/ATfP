@@ -169,12 +169,9 @@ inline void clean_coconut(string &s) {
         int digitCount = 0;
         char* digitsStart = pch + coconutLength;
 
-        //Count digits
         while (isdigit(digitsStart[digitCount]) && digitCount < 6)
             digitCount++;
 
-
-        // Check if there are 3 to 6 digits after "Coconut"
         if (digitCount >= 3 && digitCount <= 6) {
 
             char* src = digitsStart + digitCount;
@@ -182,7 +179,6 @@ inline void clean_coconut(string &s) {
             *dest = 'c';
             dest = digitsStart;
 
-            // Copy the characters following "Coconut" and the digits
             while (*src) {
                 *dest = *src;
                 src++;
@@ -190,8 +186,7 @@ inline void clean_coconut(string &s) {
             }
 
             *dest = '\0';
-            size_t newSize = strlen(s.data());
-            s.resize(newSize);
+            s.resize(strlen(s.data()));
 
         }
         pch++;
@@ -215,8 +210,28 @@ inline void clean_coconut(string &s) {
 // Those hints are really advanced stuff and may harm more than help you, if you
 // are unsure what they mean or what to do with them!
 inline void clean_spaces(string &s) {
+    char* pch = const_cast<char*>(s.data());
 
+    while ((pch = strstr(pch, " ")) != nullptr) {
+        int spaceCount = 1;
+        while (pch[spaceCount]==' ')
+            spaceCount++;
 
+        if (spaceCount > 1) {
+
+            char* src = pch + spaceCount;
+            char* dest = pch + 1;
+
+            while (*src) {
+                *dest = *src;
+                src++;
+                dest++;
+            }
+            *dest = '\0';
+            s.resize(strlen(s.data()));
+        }
+        pch++;
+    }
 }
 
 // we compare the speed of the slow "regex_clean" function with this one, where
@@ -277,17 +292,16 @@ int main() {
   }
   string text;
   getline(ifs, text, '\0'); // read the whole file into a string
-//text="oaskndCoconut1999kdkCoconut1234jknCoconut1999kdkCoconut1234njnjnCoconut1999kdkCoconut1234Coconut1999kdkCoconut1234Coconut1999kdkCoconut1234";
-cout<<text<<endl;
+
   string copy_regex = text;
   TIMERSTART(regex_clean)
-  regex_clean(copy_regex);
+ regex_clean(copy_regex);
   TIMERSTOP(regex_clean)
-cout<<copy_regex<<endl;
+
   string copy_fast = text;
   TIMERSTART(fast_clean)
   fast_clean(copy_fast);
   TIMERSTOP(fast_clean)
-    cout<<copy_fast<<endl;
+
   assert(copy_regex == copy_fast);
 }
