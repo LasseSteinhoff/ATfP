@@ -5,6 +5,7 @@
 #include <stack>
 #include <cassert>
 #include <iostream>
+#include <cstdint>
 
 using namespace std;
 
@@ -38,7 +39,7 @@ struct Node {
 // of code ;).
 
 bool is_palindrom(Node *node) {
-       stack<u_int64_t> data;
+       stack<uint64_t> data;
        Node *first=node;
        while(first!=nullptr)
        {

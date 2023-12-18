@@ -1,0 +1,21 @@
+Outline an algorithm to convert a string to an
+unsigned integer (no negative numbers).
+
+
+Outline an algorithm to convert an unsigned integer to a string.
+
+
+Explain the characteristics of the character encodings
+ASCII, Extended ASCII, UTF-8, UTF-16 and UTF-32.
+
+
+What advice can you give to modify strings as quickly
+as possible?
+
+
+Why are hardcoded regex expressions often much
+faster?
+
+
+Is run-length encoding a good compression method
+for strings?

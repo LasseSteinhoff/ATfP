@@ -3,17 +3,17 @@
   
 2. Briefly describe how you approached and solved Project Euler Problem 1.
   The Project Euler Problem 1 is about finding the sum of multiples of five and three until reaching threshold 1000.
-  Therefore I used the while loop to create a pair of multiples of five and three by the same multipler.
+  Therefore I used the while loop to create a pair of multiples of five and three by the same multiplier.
   One of them will not be added to sum, because  the set (15 + n * 15, n>=0) is duplicate among the multiples of five and three.
   After the multiple of 3 reached over the threshold 1000 with 1002, the algorithm will break.
   
 3. Describe your approach on Project Euler Problem 107: which algorithm did
 you use and why?
-  The Project Euler Problem 107 is about find the minimal spanning tree of a dircted acyclic graph represented as a quadratic adjacency matrix.
-  I choose the Prim algorithm, because the Kruskal algorithm has a more diffcult data structure.
+  The Project Euler Problem 107 is about find the minimal spanning tree of a directed acyclic graph represented as a quadratic adjacency matrix.
+  I choose the Prim algorithm, because the Kruskal algorithm has a more difficult data structure.
   First it starts by randomly selecting a vertex to search for key among those visited vertices, which has the edge with the lowest weight within their rows.
   The visited vertices will be marked one by one by a unordered map as a boolean.
-  The key is an integer for the row in the matrix representing the identifer for a vertex.
+  The key is an integer for the row in the matrix representing the identifier for a vertex.
   
   
   

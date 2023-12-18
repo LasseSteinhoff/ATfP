@@ -16,12 +16,11 @@ are set to 1 in an integer. (no bitset or built-in functions)
 Outline an algorithm to reverse the bits in an unsigned
 integer (swap bits at position i and n − i).
   We produce two additional integers for every i-th position by left shifting a 1 i times.
-  One integer with 1 at the position i does a union to find auch if it is a 1 at the i-th position in the reversed integer.
-  The other with 1 at the position n - 1 - i will intersect to build the reversed integer 
-  until the original integer is zero due to the left shift from the union in a while loop.
+  One integer with 1 at the position i does a union to find if it is a 1 at the i-th position in the original integer.
+  The other with 1 at the position n - 1 - i will intersect to build the reversed integer.
   
 Imagine you have to reorder integers in an array so that
 the odd entries appear first. How is this problem
 related to Quicksort’s partitioning function?
-  In the main partioning function of the quicksort the pivot devides what index will swap to the rigth side of the pivot if the figure is greater and to the left if less.
-  Now this function can also be the question whether it is odd or even reordering the array in the desired way.
+  In the main partioning function of the quicksort the pivot devides what index will be swaped to the rigth side of the pivot if the figure is greater and to the left if it's less.
+  Now this function can also be substituted with if it is odd or even reordering the array in the desired way.

@@ -1,0 +1,20 @@
+ How to delete a (non-tail) node from a singly linked
+list without knowing its predecessor in O(1) time?
+
+Explain the runner technique using a linked list example.
+
+If you were to tune the code for speed, how would
+you implement a stack?
+
+
+How can we use a std::list in C++ as a queue?
+
+
+How does a binary tree and a binary search tree
+differ?
+
+
+Describe the different types of binary tree traversals.
+
+
+How does a trie and a radix tree differ?
