@@ -1,0 +1,27 @@
+How can we exploit bit operations for operations with
+sets?
+  It allows to perform logic operation like the intersection (and), union (or), difference (xor) and complement (not)
+  
+Explain the difference between arithmetic and logical
+right shifts for negative signed integers.
+  In the logical right shift would the negative signed integer become positive due to the left most bit being inserted as 0.
+  The arithmetic right shift inserts 1 instead, producing a negative integer of a positive signed one.
+  
+Outline an algorithm to count the number of bits that
+are set to 1 in an integer. (no bitset or built-in functions)
+  We use a logical right shift operation directly on spot in the memory without using a data structure.
+  In a while loop intersect the right most bit with 1, if it is true we increment a counter.
+  The while loop condition is the integer itself by reaching zero due to the right shift.
+
+Outline an algorithm to reverse the bits in an unsigned
+integer (swap bits at position i and n − i).
+  We produce two additional integers for every i-th position by left shifting a 1 i times.
+  One integer with 1 at the position i does a union to find auch if it is a 1 at the i-th position in the reversed integer.
+  The other with 1 at the position n - 1 - i will intersect to build the reversed integer 
+  until the original integer is zero due to the left shift from the union in a while loop.
+  
+Imagine you have to reorder integers in an array so that
+the odd entries appear first. How is this problem
+related to Quicksort’s partitioning function?
+  In the main partioning function of the quicksort the pivot devides what index will swap to the rigth side of the pivot if the figure is greater and to the left if less.
+  Now this function can also be the question whether it is odd or even reordering the array in the desired way.
